@@ -3,11 +3,13 @@ const app = express()
 const {bots, playerRecord} = require('./data')
 const {shuffleArray} = require('./utils')
 
+
 app.use(express.json())
 app.use(express.static('./public'))
 
 app.get('/api/robots', (req, res) => {
     try {
+        // let botsArr = bots 
         res.status(200).send(botsArr)
     } catch (error) {
         console.log('ERROR GETTING BOTS', error)
